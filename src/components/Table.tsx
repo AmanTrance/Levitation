@@ -54,6 +54,10 @@ function Table() {
         getUserEmail();
     }, []);
 
+    const handleDate = (e: any) => {
+        console.log();
+    }
+
   return (
     <div className="flex flex-col justify-center items-center h-screen dark:bg-gray-900 text-white font-bold text-xl word">
         Your forms 
@@ -62,6 +66,8 @@ function Table() {
                 return <TableDetails key={uuidv4()} name={item.name} email={item.email} phone={item.phone} addressOne={item.addressOne} addressTwo={item.addressTwo} city={item.city} state={item.state} pincode={item.pincode} country={item.country} language={item.language}/>
             })}
         </div>
+        <input type="date" id="date" value="2000-01-01" className="mt-2 text-white rounded-md p-1 w-40 dark:bg-gray-700" onChange={handleDate}/>
+        <label htmlFor="date" className="underline">Enter date for specific form</label>
     </div>
   )
 }

@@ -62,7 +62,7 @@ function Table() {
   return (
     <div className="flex flex-col justify-center items-center h-screen dark:bg-gray-900 text-white font-bold text-xl word">
         Your forms 
-        <div className="flex flex-col h-3/4 sm:w-auto w-full dark:bg-gray-800 mt-2 border border-gray-300 overflow-auto">
+        <div className="flex flex-col h-3/4 sm:w-3/4 w-full dark:bg-gray-800 mt-2 border border-gray-300 overflow-auto">
             {data.map((item: Data) => {
                 return <TableDetails key={uuidv4()} name={item.name} email={item.email} phone={item.phone} addressOne={item.addressOne} addressTwo={item.addressTwo} city={item.city} state={item.state} pincode={item.pincode} country={item.country} language={item.language}/>
             })}

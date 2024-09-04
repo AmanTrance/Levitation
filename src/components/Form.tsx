@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 type Language = {
@@ -16,9 +16,11 @@ function Form() {
   const [lang, setLang] = useState<string>("Choose");
   const [height, setHeight] = useState<string>("h-0");
 
-  if (window.sessionStorage.getItem("id") === null) {
+  useEffect(() => {
+   if (window.sessionStorage.getItem("id") === null) {
     navigate("/");
-  }
+   } 
+  });
 
   const handleCancel = () => {
     navigate('/table');
@@ -40,13 +42,13 @@ function Form() {
     } else if (middle === true) {
       e.preventDefault();
       const file: HTMLInputElement = document.getElementById('file') as HTMLInputElement;
-      if (file.files != null) {
+      if (file.files !== null) {
         if (file.files.length > 3) {
           alert("Only max of 3 files allowed");
         } else {
           for (let i of file.files) {
             await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/file", i, {headers:{
-              "Content-Type": "image/jpeg"
+              "Content-type": "image/jpeg"
             }}); 
           }
         }

@@ -11,7 +11,7 @@ function TableDetails(props: {
     language?: string
 }) {
   return (
-    <div className="grid grid-cols-10 h-28 w-full break-all">
+    <div className="grid grid-cols-10 h-28 w-full break-all border border-gray-300">
         <div className="dark:bg-slate-700 h-full text-nowrap text-sm text-white font-semibold flex flex-col overflow-x-scroll lg:overflow-hidden p-2">Name-<p className="font-extrabold text-ellipsis break-all text-sm">{props.name}</p></div>
         <div className="dark:bg-slate-700 h-full text-nowrap text-sm text-white font-semibold flex flex-col overflow-x-scroll lg:overflow-hidden p-2">Email-<p className="font-extrabold text-ellipsis break-all text-sm">{props.email}</p></div>
         <div className="dark:bg-slate-700 h-full text-nowrap text-sm text-white font-semibold flex flex-col overflow-x-scroll lg:overflow-hidden p-2">Phone-<p className="font-extrabold text-ellipsis break-all text-sm">{props.phone}</p></div>

@@ -45,9 +45,9 @@ function Table() {
             const languagedata = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/alllanguage", JSON.stringify(jsonObject), {headers:{
                 "Content-Type": "application/json"
             }}) as Language;
-            for (let i in formdata.data as Data[]) {
+            for (let i in formdata.data) {
                 setData((prev) => { 
-                    return [...prev, {...formdata.data[i], ...(languagedata.data[i])}];
+                    return [...prev, {...formdata.data[i], ...languagedata.data[i]}];
                 });
             }
         }

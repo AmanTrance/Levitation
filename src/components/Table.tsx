@@ -41,18 +41,15 @@ function Table() {
             }
             const formdata = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/allforms", JSON.stringify(jsonObject), {headers:{
                 "Content-Type": "application/json"
-            }});
+            }}) as unknown as {data: Data[]};
             const languagedata = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/alllanguage", JSON.stringify(jsonObject), {headers:{
                 "Content-Type": "application/json"
             }}) as Language;
-            let result: Data; 
-            let k: number = 0;
-            for (let i of formdata.data as Data[]) {
-                result = {...i, ...languagedata.data[k]};
-                k++;
-                setData((prev) => [...prev, result]);
+            for (let i in formdata.data as Data[]) {
+                setData((prev) => { 
+                    return [...prev, {...formdata.data[i], ...(languagedata.data[i])}];
+                });
             }
-            k = 0;
         }
         getUserEmail();
     }, []);
@@ -60,7 +57,7 @@ function Table() {
   return (
     <div className="flex flex-col justify-center items-center h-screen dark:bg-gray-900 text-white font-bold text-xl word">
         Your forms 
-        <div className="flex flex-col h-3/4 sm:w-auto w-full dark:bg-gray-800 mt-2 border border=gray-300 overflow-auto">
+        <div className="flex flex-col h-3/4 sm:w-auto w-full dark:bg-gray-800 mt-2 border border-gray-300 overflow-auto">
             {data.map((item: Data) => {
                 return <TableDetails key={uuidv4()} name={item.name} email={item.email} phone={item.phone} addressOne={item.addressOne} addressTwo={item.addressTwo} city={item.city} state={item.state} pincode={item.pincode} country={item.country} language={item.language}/>
             })}

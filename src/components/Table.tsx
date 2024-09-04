@@ -35,7 +35,7 @@ function Table() {
     useEffect(() => {
         const getUserEmail = async () => {
             if (data.length > 0) return;
-            const jsonObject: {} = {
+            const jsonObject: { userid: number } = {
                 userid: Number(window.sessionStorage.getItem("id")) 
             }
             const formdata = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/allforms", JSON.stringify(jsonObject), {headers:{

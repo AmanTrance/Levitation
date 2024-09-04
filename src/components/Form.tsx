@@ -110,7 +110,7 @@ function Form() {
       </div>
       {initial && <form id="form1" className="flex flex-col justify-center items-center h-full dark:bg-gray-900" onSubmit={handleNext}>
         <h1 className="text-white font-semibold text-xl mb-2 underline">Fill the form</h1>
-        <div className="grid rounded-lg grid-rows-10 dark:border h-3/4 w-1/3 dark:bg-gray-800">
+        <div className="grid rounded-lg grid-rows-10 dark:border h-3/4 lg:w-1/3 w-2/3 dark:bg-gray-800">
             <div className="flex flex-col justify-center p-2.5">
               <label htmlFor="name" className="text-white ml-1 text-sm font-semibold">Name</label>
               <input id="name" name="name" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
@@ -154,7 +154,7 @@ function Form() {
         </div>
       </form>}
       {middle && <form id="form2" className="flex flex-col justify-center items-center h-full dark:bg-gray-900" onSubmit={handleNext}>
-          <div className="flex flex-col rounded-lg dark:border h-1/4 w-full sm:w-1/3 dark:bg-gray-800">
+          <div className="flex flex-col rounded-lg dark:border h-1/4 w-full lg:w-1/3 dark:bg-gray-800">
             <div className="flex flex-col w-full justify-center items-center p-4">
               <label htmlFor="file" className="text-white text-lg ml-1 font-semibold">Files</label>
               <input id="file" type="file" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white cursor-pointer md:w-60 w-full" multiple/>
@@ -167,11 +167,11 @@ function Form() {
           </div>
         </form>}
       {final && <form id="form3" className="flex flex-col justify-center items-center h-full dark:bg-gray-900" onSubmit={handleSubmit}>
-          <div className="flex flex-col rounded-lg dark:border h-1/4 w-full sm:w-1/3 dark:bg-gray-800">
+          <div className="flex flex-col rounded-lg dark:border h-1/4 w-full lg:w-1/3 dark:bg-gray-800">
             <div className="flex flex-col justify-center items-center h-2/4 font-bold text-white">
               Choose your favourite language
-              <div id="lang" className="flex justify-center items-center relative mt-4 dark:bg-purple-500 h-10 w-1/4 text-black rounded-lg">
-              {lang}{dropDown ? <i className="fa-solid cursor-pointer ml-2 mt-1 p-3 fa-chevron-up text-black font-bold w-5" onClick={handleDropDown}></i> : <i className="fa-solid cursor-pointer ml-2 p-3 fa-chevron-down text-black font-bold w-5" onClick={handleDropDown}></i>}
+              <div id="lang" className="flex justify-center items-center relative mt-4 dark:bg-purple-500 h-10 w-2/4 text-black rounded-lg">
+              {lang}{dropDown ? <i className="fa-solid cursor-pointer ml-1 mt-1 p-3 fa-chevron-up text-black font-bold w-5" onClick={handleDropDown}></i> : <i className="fa-solid cursor-pointer ml-1 p-3 fa-chevron-down text-black font-bold w-5" onClick={handleDropDown}></i>}
                 {dropDown && <div className="grid grid-rows-5 h-64 w-full absolute mt-80 transition-all duration-500 ease-in"><div className="flex justify-center items-center bg-gray-600 cursor-pointer border-b-2 border-white hover:bg-slate-800 transition-all duration-500 ease-in text-white rounded-t-lg" onClick={handleClick}>Rust</div>
                 <div className="flex justify-center items-center bg-gray-600 cursor-pointer border-b-2 border-white hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>Golang</div><div className="flex justify-center items-center bg-gray-600 cursor-pointer border-b-2 border-white hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>TypeScript</div><div className="flex justify-center items-center bg-gray-600 cursor-pointer border-b-2 border-white hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>C++</div>
                 <div className="flex justify-center items-center bg-gray-600 cursor-pointer border-b-2 border-white hover:bg-slate-800 transition-all duration-500 ease-in text-white rounded-b-lg" onClick={handleClick}>Python</div>

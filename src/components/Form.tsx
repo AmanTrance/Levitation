@@ -13,7 +13,7 @@ function Form() {
   const [middle, setMiddle] = useState<boolean>(false);
   const [final, setFinal] = useState<boolean>(false);
   const [dropDown, setDropDown] = useState<boolean>(false);
-  const [lang, setLang] = useState<string>("Choose");
+  const [lang, setLang] = useState<string>("Not Choosed");
   const [height, setHeight] = useState<string>("h-0");
 
   useEffect(() => {
@@ -112,39 +112,39 @@ function Form() {
         <h1 className="text-white font-semibold text-xl mb-2 underline">Fill the form</h1>
         <div className="grid rounded-lg grid-rows-10 dark:border h-3/4 lg:w-1/3 w-2/3 dark:bg-gray-800">
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="name" className="text-white ml-1 text-sm font-semibold">Name</label>
+              <label htmlFor="name" className="text-white ml-1 text-sm w-full font-semibold">Name</label>
               <input id="name" name="name" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="email" className="text-white ml-1 text-sm font-semibold">Email</label>
+              <label htmlFor="email" className="text-white ml-1 text-sm w-full font-semibold">Email</label>
               <input id="email" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" name="email" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="phone" className="text-white ml-1 text-sm font-semibold">Phone</label>
+              <label htmlFor="phone" className="text-white ml-1 text-sm w-full font-semibold">Phone</label>
               <input id="phone" type="number" name="phone" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="address-one" className="text-white ml-1 text-sm font-semibold">Address Line One</label>
+              <label htmlFor="address-one" className="text-white ml-1 text-sm w-full font-semibold">Address Line One</label>
               <input id="address-one" name="addressOne" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="address-two" className="text-white ml-1 text-sm font-semibold">Address Line Two</label>
+              <label htmlFor="address-two" className="text-white ml-1 text-sm w-full font-semibold">Address Line Two</label>
               <input id="address-two" name="addressTwo" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="city" className="text-white ml-1 text-sm font-semibold">City</label>
+              <label htmlFor="city" className="text-white ml-1 text-sm w-full font-semibold">City</label>
               <input id="city" name="city" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="state" className="text-white ml-1 text-sm font-semibold">State</label>
+              <label htmlFor="state" className="text-white ml-1 text-sm w-full font-semibold">State</label>
               <input id="state" name="state" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="pincode" className="text-white ml-1 text-sm font-semibold">Pincode</label>
+              <label htmlFor="pincode" className="text-white ml-1 text-sm w-full font-semibold">Pincode</label>
               <input id="pincode" type="number" name="pincode" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="country" className="text-white ml-1 text-sm font-semibold">Country</label>
+              <label htmlFor="country" className="text-white ml-1 text-sm w-full font-semibold">Country</label>
               <input id="country" name="country" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex justify-evenly items-center">

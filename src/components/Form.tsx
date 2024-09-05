@@ -45,6 +45,7 @@ function Form() {
       if (file.files !== null) {
         if (file.files.length > 3) {
           alert("Only max of 3 files allowed");
+          return;
         } else {
           for (let i of file.files) {
             await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/file", i, {headers:{

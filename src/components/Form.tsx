@@ -13,7 +13,7 @@ function Form() {
   const [middle, setMiddle] = useState<boolean>(false);
   const [final, setFinal] = useState<boolean>(false);
   const [dropDown, setDropDown] = useState<boolean>(false);
-  const [lang, setLang] = useState<string>("Not Choosed");
+  const [lang, setLang] = useState<string>("Choose");
   const [height, setHeight] = useState<string>("h-0");
 
   useEffect(() => {
@@ -84,7 +84,7 @@ function Form() {
     e.preventDefault();
     setHeight("h-full");
     const SubmitDetails: Language = {
-      language: lang,
+      language: lang !== "Choose" ? lang : "...",
       userid: Number(window.sessionStorage.getItem("id"))
     }
     const response = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/language", JSON.stringify(SubmitDetails), {headers:{

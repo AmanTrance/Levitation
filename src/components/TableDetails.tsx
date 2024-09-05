@@ -1,13 +1,13 @@
 function TableDetails(props: {
-    name?: string,
-    email?: string,
-    phone?: number,
-    addressOne?: string,
-    addressTwo?: string,
-    city?: string,
-    state?: string,
-    pincode?: number,
-    country?: string,
+    name: string,
+    email: string,
+    phone: number,
+    addressOne: string,
+    addressTwo: string,
+    city: string,
+    state: string,
+    pincode: number,
+    country: string,
     language?: string
 }) {
   return (

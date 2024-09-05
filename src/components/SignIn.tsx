@@ -10,7 +10,7 @@ function SignIn() {
   const navigate = useNavigate();
 
   const handleSignup = () => {
-    navigate('/signup');
+    navigate("/signup");
   }
 
   const handlePassword = (e: any) => {
@@ -38,7 +38,7 @@ function SignIn() {
       alert("Wrong Credentials");
     } else {
       window.sessionStorage.setItem('id', `${response.data}`);
-      navigate('form');
+      navigate("/form");
     }
   } 
   

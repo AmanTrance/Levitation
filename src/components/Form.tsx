@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 type Language = {
   language: string,
-  userid: number
+  userid: number,
+  date: string
 }
 
 function Form() {
@@ -23,7 +24,7 @@ function Form() {
   });
 
   const handleCancel = () => {
-    navigate('/table');
+    navigate("/table");
   }
 
   const handleNext = async (e: any) => {
@@ -33,6 +34,7 @@ function Form() {
       const formData: FormData = new FormData(form);
       let formDetails = Object.fromEntries(formData);
       formDetails["userid"] = window.sessionStorage.getItem("id") as FormDataEntryValue;
+      formDetails["date"] = `${new Date().getFullYear()}`+ `${new Date().getMonth() + 1 < 10 ? "-0" : "-"}` + `${new Date().getMonth() + 1}` + `${new Date().getDate() < 10 ? "-0" : "-"}` + `${new Date().getDate()}`;
       await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/form", JSON.stringify(formDetails), {headers:{
         "Content-Type": "application/json"
       }});
@@ -86,7 +88,8 @@ function Form() {
     setHeight("h-full");
     const SubmitDetails: Language = {
       language: lang !== "Choose" ? lang : "...",
-      userid: Number(window.sessionStorage.getItem("id"))
+      userid: Number(window.sessionStorage.getItem("id")),
+      date: `${new Date().getFullYear()}`+ `${new Date().getMonth() + 1 < 10 ? "-0" : "-"}` + `${new Date().getMonth() + 1}` + `${new Date().getDate() < 10 ? "-0" : "-"}` + `${new Date().getDate()}`
     }
     const response = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/language", JSON.stringify(SubmitDetails), {headers:{
       "Content-Type": "application/json"

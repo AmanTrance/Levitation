@@ -11,11 +11,11 @@ function SignUp() {
     const navigate = useNavigate();
 
     const handleSignin = () => {
-        navigate('/')
+        navigate("/")
     }
 
     const handlePassword = (e: any) => {
-        const element: HTMLInputElement | null = document.getElementById('password') as HTMLInputElement | null;
+        const element: HTMLInputElement | null = document.getElementById("passwoed") as HTMLInputElement | null;
         if (e.target.checked === true) {
             if (element !== null) {
               element.type = "text";
@@ -29,14 +29,14 @@ function SignUp() {
 
     const handleSignUp = async (e: any) => {
       e.preventDefault();
-      const form: HTMLFormElement = document.getElementById('form') as HTMLFormElement;
+      const form: HTMLFormElement = document.getElementById("form") as HTMLFormElement;
       const formData: FormData = new FormData(form);
       const user: UserDetails = Object.fromEntries(formData) as UserDetails;
       const response = await axios.post('https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/auth/signup', JSON.stringify(user), {headers:{
         "Content-Type": "application/json"
       }});
       if (response.status === 200) {
-        navigate('/');
+        navigate("/");
       } else {
         alert("Server is not responding");
       }

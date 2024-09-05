@@ -11,22 +11,22 @@ type Language = {
 }
 
 type Data = {
-    name?: string,
-    email?: string,
-    phone?: number,
-    addressOne?: string,
-    addressTwo?: string,
-    city?: string,
-    state?: string,
-    pincode?: number,
-    country?: string,
+    name: string,
+    email: string,
+    phone: number,
+    addressOne: string,
+    addressTwo: string,
+    city: string,
+    state: string,
+    pincode: number,
+    country: string,
     language?: string
 }
 
 function Table() {
     const navigate = useNavigate();
     const [data, setData] = useState<Data[]>([]);
-    const [date, setDate] = useState<string>("2000-01-01");
+    const [date, setDate] = useState<string>("2024-01-01");
 
     useEffect(() => {
         if (window.sessionStorage.getItem("id") === null) {
@@ -55,8 +55,23 @@ function Table() {
         getUserEmail();
     }, []);
 
-    const handleDate = (e: any) => {
+    const handleDate = async (e: any) => {
         setDate(e.target.value);
+        const jsonObject = {
+            date: e.target.value
+        }
+        setData([]);
+        const formdata = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/specificform", JSON.stringify(jsonObject), {headers:{
+            "Content-Type": "application/json"
+        }}) as unknown as {data: Data[]};
+        const languagedata = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/specificlang", JSON.stringify(jsonObject), {headers:{
+            "Content-Type": "application/json"
+        }}) as Language;
+        for (let i in formdata.data) {
+            setData((prev) => { 
+                return [...prev, {...formdata.data[i], ...languagedata.data[i]}];
+            });
+        }
     }
 
   return (

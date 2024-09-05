@@ -57,7 +57,7 @@ function Table() {
 
     const handleDate = async (e: any) => {
         setDate(e.target.value);
-        const jsonObject = {
+        const jsonObject: { date: string } = {
             date: e.target.value
         }
         setData([]);

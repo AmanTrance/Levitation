@@ -15,7 +15,7 @@ function SignUp() {
     }
 
     const handlePassword = (e: any) => {
-        const element: HTMLInputElement | null = document.getElementById("passwoed") as HTMLInputElement | null;
+        const element: HTMLInputElement | null = document.getElementById("password") as HTMLInputElement | null;
         if (e.target.checked === true) {
             if (element !== null) {
               element.type = "text";

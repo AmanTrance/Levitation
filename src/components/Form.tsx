@@ -152,8 +152,8 @@ function Form() {
               <input id="country" name="country" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex justify-evenly items-center">
-              <button className="dark:bg-red-500 w-1/4 h-2/4 rounded-md font-bold hover:bg-red-400 transition-all duration-500 ease-in cursor-pointer" onClick={handleCancel}>Cancel</button>
-              <input className="dark:bg-blue-500 w-1/4 h-2/4 rounded-md font-bold hover:bg-blue-400 transition-all duration-500 ease-in cursor-pointer" type="submit" value="Next"/>
+              <button className="dark:bg-red-500 w-1/4 h-2/4 rounded-md text-white font-bold hover:bg-red-600 transition-all duration-500 ease-in cursor-pointer" onClick={handleCancel}>Cancel</button>
+              <input className="dark:bg-blue-500 w-1/4 h-2/4 rounded-md text-white font-bold hover:bg-blue-600 transition-all duration-500 ease-in cursor-pointer" type="submit" value="Next"/>
             </div>
         </div>
       </form>}
@@ -164,9 +164,9 @@ function Form() {
               <input id="file" type="file" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white cursor-pointer md:w-60 w-full" multiple/>
             </div>
             <div className="flex justify-evenly items-center h-28">
-              <button className="dark:bg-red-500 w-1/4 h-2/4 rounded-md font-bold hover:bg-red-400 transition-all duration-500 ease-in" onClick={handleCancel}>Cancel</button>
-              <button className="dark:bg-green-500 w-1/4 h-2/4 rounded-md font-bold hover:bg-green-400 transition-all duration-500 ease-in" onClick={handlePrevious}>Previous</button>
-              <button type="submit" className="dark:bg-blue-500 w-1/4 h-2/4 rounded-md font-bold hover:bg-blue-400 transition-all duration-500 ease-in">Next</button>
+              <button className="dark:bg-red-500 w-1/4 h-2/4 rounded-md text-white font-bold hover:bg-red-600 transition-all duration-500 ease-in" onClick={handleCancel}>Cancel</button>
+              <button className="dark:bg-green-500 w-1/4 h-2/4 rounded-md text-white font-bold hover:bg-green-600 transition-all duration-500 ease-in" onClick={handlePrevious}>Previous</button>
+              <button type="submit" className="dark:bg-blue-500 w-1/4 h-2/4 rounded-md text-white font-bold hover:bg-blue-600 transition-all duration-500 ease-in">Next</button>
             </div>
           </div>
         </form>}
@@ -174,18 +174,18 @@ function Form() {
           <div className="flex flex-col rounded-lg dark:border h-1/4 w-full lg:w-1/3 dark:bg-gray-800">
             <div className="flex flex-col justify-center items-center h-2/4 font-bold text-white">
               Choose your favourite language
-              <div id="lang" className="flex justify-center items-center relative mt-4 dark:bg-purple-500 h-10 w-2/4 text-black rounded-lg">
-              {lang}{dropDown ? <i className="fa-solid cursor-pointer ml-1 mt-1 p-3 fa-chevron-up text-black font-bold w-5" onClick={handleDropDown}></i> : <i className="fa-solid cursor-pointer ml-1 p-3 fa-chevron-down text-black font-bold w-5" onClick={handleDropDown}></i>}
-                {dropDown && <div className="grid grid-rows-5 h-64 w-full absolute mt-80 transition-all duration-500 ease-in"><div className="flex justify-center items-center bg-gray-600 cursor-pointer border-b-2 border-white hover:bg-slate-800 transition-all duration-500 ease-in text-white rounded-t-lg" onClick={handleClick}>Rust</div>
-                <div className="flex justify-center items-center bg-gray-600 cursor-pointer border-b-2 border-white hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>Golang</div><div className="flex justify-center items-center bg-gray-600 cursor-pointer border-b-2 border-white hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>TypeScript</div><div className="flex justify-center items-center bg-gray-600 cursor-pointer border-b-2 border-white hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>C++</div>
-                <div className="flex justify-center items-center bg-gray-600 cursor-pointer border-b-2 border-white hover:bg-slate-800 transition-all duration-500 ease-in text-white rounded-b-lg" onClick={handleClick}>Python</div>
+              <div id="lang" className="flex justify-center items-center relative mt-4 dark:bg-purple-500 h-10 w-2/4 text-white rounded-lg">
+              {lang}{dropDown ? <i className="fa-solid cursor-pointer ml-1 mt-1 p-3 fa-chevron-up text-white font-bold w-5" onClick={handleDropDown}></i> : <i className="fa-solid cursor-pointer ml-1 p-3 fa-chevron-down text-white font-bold w-5" onClick={handleDropDown}></i>}
+                {dropDown && <div className="grid grid-rows-5 h-64 w-full absolute mt-80 transition-all duration-500 ease-in"><div className="flex justify-center items-center bg-gray-600 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white rounded-t-lg" onClick={handleClick}>Rust</div>
+                <div className="flex justify-center items-center bg-gray-600 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>Golang</div><div className="flex justify-center items-center bg-gray-600 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>TypeScript</div><div className="flex justify-center items-center bg-gray-600 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>C++</div>
+                <div className="flex justify-center items-center bg-gray-600 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white rounded-b-lg" onClick={handleClick}>Python</div>
                 </div>}
               </div>
             </div>
             <div className="flex justify-evenly items-center h-28">
-              <button className="dark:bg-red-500 w-1/4 h-2/4 rounded-md font-bold hover:bg-red-400 transition-all duration-500 ease-in" onClick={handleCancel}>Cancel</button>
-              <button className="dark:bg-green-500 w-1/4 h-2/4 rounded-md font-bold hover:bg-green-400 transition-all duration-500 ease-in" onClick={handlePrevious}>Previous</button>
-              <button className="dark:bg-blue-500 w-1/4 h-2/4 rounded-md font-bold hover:bg-blue-400 transition-all duration-500 ease-in">Submit</button>
+              <button className="dark:bg-red-500 w-1/4 h-2/4 rounded-md font-bold hover:bg-red-600 text-white transition-all duration-500 ease-in" onClick={handleCancel}>Cancel</button>
+              <button className="dark:bg-green-500 w-1/4 h-2/4 rounded-md font-bold hover:bg-green-600 text-white transition-all duration-500 ease-in" onClick={handlePrevious}>Previous</button>
+              <button className="dark:bg-blue-500 w-1/4 h-2/4 rounded-md font-bold hover:bg-blue-600 text-white transition-all duration-500 ease-in">Submit</button>
             </div>
           </div>
         </form>}

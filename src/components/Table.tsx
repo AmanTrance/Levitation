@@ -26,7 +26,7 @@ type Data = {
 function Table() {
     const navigate = useNavigate();
     const [data, setData] = useState<Data[]>([]);
-    const [date, setDate] = useState<string>("2024-01-01");
+    const [date, setDate] = useState<string>("");
 
     useEffect(() => {
         if (window.sessionStorage.getItem("id") === null) {
@@ -75,15 +75,15 @@ function Table() {
     }
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen dark:bg-gray-900 text-white font-bold text-xl word">
+    <div className="flex flex-col justify-center items-center h-screen dark:bg-gray-900 text-white font-bold text-4xl word">
         Your forms 
-        <div className="h-3/4 sm:w-3/4 w-full dark:bg-gray-800 mt-2 border border-gray-300 overflow-y-scroll no-scrollbar">
+        <div className="h-3/4 sm:w-full w-full dark:bg-gray-800 mt-2 border border-gray-300 overflow-y-scroll no-scrollbar">
             {data.map((item: Data) => {
                 return <TableDetails key={uuidv4()} name={item.name} email={item.email} phone={item.phone} addressOne={item.addressOne} addressTwo={item.addressTwo} city={item.city} state={item.state} pincode={item.pincode} country={item.country} language={item.language}/>
             })}
         </div>
-        <input type="date" id="date" value={date} className="mt-2 text-white rounded-md p-1 w-40 dark:bg-gray-700" onChange={handleDate}/>
-        <label htmlFor="date" className="underline">Enter date for specific form</label>
+        <input type="date" id="date" value={date} className="mt-2 text-white text-xl rounded-md p-1 w-40 dark:bg-gray-700" onChange={handleDate}/>
+        <label htmlFor="date" className="underline text-xl">Enter date for specific form</label>
     </div>
   )
 }

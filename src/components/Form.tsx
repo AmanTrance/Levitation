@@ -170,7 +170,7 @@ function Form() {
             </div>
         </div>
       </form>}
-      {middle && <form id="form2" className="flex flex-col justify-center items-center h-full dark:bg-gray-900" onSubmit={handleNext}>
+      {middle && <form id="form2" className="flex flex-col justify-center items-center h-full w-full dark:bg-gray-900" onSubmit={handleNext}>
           <div className="flex flex-col rounded-lg dark:border h-1/4 w-full lg:w-1/3 dark:bg-gray-800">
             <div className="flex flex-col w-full justify-center items-center p-4">
               <label htmlFor="file" className="text-white text-lg ml-1 font-semibold">Files</label>
@@ -183,7 +183,7 @@ function Form() {
             </div>
           </div>
         </form>}
-      {final && <form id="form3" className="flex flex-col justify-center items-center h-full dark:bg-gray-900" onSubmit={handleSubmit}>
+      {final && <form id="form3" className="flex flex-col justify-center items-center h-full w-full dark:bg-gray-900" onSubmit={handleSubmit}>
           <div className="flex flex-col rounded-lg dark:border h-1/4 w-full lg:w-1/3 dark:bg-gray-800">
             <div className="flex flex-col justify-center items-center h-2/4 font-bold text-white">
               Choose your favourite language

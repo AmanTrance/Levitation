@@ -23,8 +23,24 @@ function Form() {
    } 
   });
 
-  const handleCancel = () => {
-    navigate("/table");
+  const handleCancel = async () => {
+    if (middle === true || final === true) {
+      const SubmitDetails: Language = {
+        language: "...",
+        userid: Number(window.sessionStorage.getItem("id")),
+        date: `${new Date().getFullYear()}`+ `${new Date().getMonth() + 1 < 10 ? "-0" : "-"}` + `${new Date().getMonth() + 1}` + `${new Date().getDate() < 10 ? "-0" : "-"}` + `${new Date().getDate()}`
+      }
+      const response = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/language", JSON.stringify(SubmitDetails), {headers:{
+        "Content-Type": "application/json"
+      }});
+      if (response.status === 200) {
+        navigate("/table");
+      } else {
+        return;
+      }
+    } else {
+      navigate("/table");
+    }
   }
 
   const handleNext = async (e: any) => {

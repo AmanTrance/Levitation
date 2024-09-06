@@ -31,12 +31,10 @@ function Form() {
         userid: Number(window.sessionStorage.getItem("id")),
         date: `${new Date().getFullYear()}`+ `${new Date().getMonth() + 1 < 10 ? "-0" : "-"}` + `${new Date().getMonth() + 1}` + `${new Date().getDate() < 10 ? "-0" : "-"}` + `${new Date().getDate()}`
       }
-      const response = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/language", JSON.stringify(LangDetails), {headers:{
+      await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/language", JSON.stringify(LangDetails), {headers:{
         "Content-Type": "application/json"
       }});
-      if (response.status === 200) {
-        navigate("/table");
-      }
+      navigate("/table");
     } else {
       navigate("/table");
     }

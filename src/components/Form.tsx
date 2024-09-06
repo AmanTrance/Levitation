@@ -119,15 +119,15 @@ function Form() {
   }
 
   return (
-    <div className="h-screen w-full dark:bg-gray-900">
-      <div className="fixed flex justify-center items-center w-full p-3">
+    <div className="flex justify-center items-center h-screen w-full dark:bg-gray-900 overflow-y-scroll no-scrollbar">
+      <div className="fixed sm:flex justify-center items-center w-full sm:mb-130 sm:visible hidden">
         <div className="flex flex-col-reverse h-16 w-10 rounded-md bg-white">
           <div className={`flex justify-center items-center dark:bg-green-500 font-bold w-full ${height} rounded-md text-lg transition-all duration-500 ease-in`}></div>
         </div>
       </div>
-      {initial && <form id="form1" className="flex flex-col justify-center items-center h-full dark:bg-gray-900" onSubmit={handleNext}>
+      {initial && <form id="form1" className="flex flex-col justify-center items-center h-128 w-full dark:bg-gray-900" onSubmit={handleNext}>
         <h1 className="text-white font-semibold text-xl mb-2 underline">Fill the form</h1>
-        <div className="grid rounded-lg grid-rows-10 dark:border h-3/4 lg:w-1/3 w-2/3 dark:bg-gray-800">
+        <div className="grid rounded-lg grid-rows-10 dark:border h-full lg:w-1/3 w-2/3 dark:bg-gray-800">
             <div className="flex flex-col justify-center p-2.5">
               <label htmlFor="name" className="text-white ml-1 text-sm w-full font-semibold">Name</label>
               <input id="name" name="name" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>

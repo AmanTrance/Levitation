@@ -23,20 +23,19 @@ function Form() {
    } 
   });
 
-  const handleCancel = async () => {
+  const handleCancel = async (e :any) => {
+    e.preventDefault();
     if (middle === true || final === true) {
-      const SubmitDetails: Language = {
+      const LangDetails: Language = {
         language: "...",
         userid: Number(window.sessionStorage.getItem("id")),
         date: `${new Date().getFullYear()}`+ `${new Date().getMonth() + 1 < 10 ? "-0" : "-"}` + `${new Date().getMonth() + 1}` + `${new Date().getDate() < 10 ? "-0" : "-"}` + `${new Date().getDate()}`
       }
-      const response = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/language", JSON.stringify(SubmitDetails), {headers:{
+      const response = await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/language", JSON.stringify(LangDetails), {headers:{
         "Content-Type": "application/json"
       }});
       if (response.status === 200) {
         navigate("/table");
-      } else {
-        return;
       }
     } else {
       navigate("/table");
@@ -46,7 +45,7 @@ function Form() {
   const handleNext = async (e: any) => {
     if (initial === true) {
       e.preventDefault();
-      const form: HTMLFormElement = document.getElementById('form1') as HTMLFormElement;
+      const form: HTMLFormElement = document.getElementById("form1") as HTMLFormElement;
       const formData: FormData = new FormData(form);
       let formDetails = Object.fromEntries(formData);
       formDetails["userid"] = window.sessionStorage.getItem("id") as FormDataEntryValue;
@@ -67,7 +66,7 @@ function Form() {
         } else {
           for (let i of file.files) {
             await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/file", i, {headers:{
-              "Content-type": "image/jpeg"
+              "Content-Type": "image"
             }}); 
           }
         }

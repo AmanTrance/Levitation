@@ -76,7 +76,7 @@ function Table() {
     }
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen dark:bg-gray-900 text-white font-bold text-4xl word">
+    <div className="font-mono flex flex-col justify-center items-center h-screen dark:bg-gray-900 text-white font-bold text-4xl word">
         Your forms 
         <div className="h-3/4 sm:w-full w-full dark:bg-gray-800 mt-2 border border-gray-300 overflow-y-scroll no-scrollbar">
             {data.map((item: Data) => {
@@ -84,7 +84,7 @@ function Table() {
             })}
         </div>
         <input type="date" id="date" value={date} className="mt-2 text-white text-xl rounded-md p-1 w-40 dark:bg-gray-700" onChange={handleDate}/>
-        <label htmlFor="date" className="underline text-xl">Enter date for specific form</label>
+        <label htmlFor="date" className="font-mono underline text-xl">Enter date for specific form</label>
     </div>
   )
 }

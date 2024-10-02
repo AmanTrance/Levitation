@@ -92,44 +92,44 @@ function Form() {
   }
 
   return (
-    <div className="flex justify-center 2xl:items-center h-full w-full dark:bg-gray-900 overflow-y-scroll">
+    <div className="flex justify-center 2xl:items-center h-full w-full dark:bg-gray-900 overflow-y-scroll no-scrollbar">
       {initial && <form id="form1" className="flex flex-col justify-center items-center h-130 w-full dark:bg-gray-900" onSubmit={handleNext}>
         <span className="text-white font-semibold text-xl mb-2 underline">Fill the form</span>
         <div className="grid rounded-lg grid-rows-10 dark:border h-5/6 xl:w-1/3 md:w-1/2 w-5/6 dark:bg-gray-800">
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="name" className="text-white ml-1 text-md w-full font-semibold">Name</label>
+              <label htmlFor="name" className="text-white ml-1 text-sm w-full font-semibold">Name</label>
               <input id="name" name="name" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="email" className="text-white ml-1 text-md w-full font-semibold">Email</label>
-              <input id="email" type="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" name="email" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+              <label htmlFor="email" className="text-white ml-1 text-sm w-full font-semibold">Email</label>
+              <input id="email" type="email" pattern="^[a-z.0-9]+@[a-z0-9]+.[a-z]{2,}$" name="email" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="phone" className="text-white ml-1 text-md w-full font-semibold">Phone</label>
+              <label htmlFor="phone" className="text-white ml-1 text-sm w-full font-semibold">Phone</label>
               <input id="phone" type="number" name="phone" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="address-one" className="text-white ml-1 text-md w-full font-semibold">Address Line One</label>
+              <label htmlFor="address-one" className="text-white ml-1 text-sm w-full font-semibold">Address Line One</label>
               <input id="address-one" name="addressOne" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="address-two" className="text-white ml-1 text-md w-full font-semibold">Address Line Two</label>
+              <label htmlFor="address-two" className="text-white ml-1 text-sm w-full font-semibold">Address Line Two</label>
               <input id="address-two" name="addressTwo" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="city" className="text-white ml-1 text-md w-full font-semibold">City</label>
+              <label htmlFor="city" className="text-white ml-1 text-sm w-full font-semibold">City</label>
               <input id="city" name="city" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="state" className="text-white ml-1 text-md w-full font-semibold">State</label>
+              <label htmlFor="state" className="text-white ml-1 text-sm w-full font-semibold">State</label>
               <input id="state" name="state" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="pincode" className="text-white ml-1 text-md w-full font-semibold">Pincode</label>
+              <label htmlFor="pincode" className="text-white ml-1 text-sm w-full font-semibold">Pincode</label>
               <input id="pincode" type="number" name="pincode" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
-              <label htmlFor="country" className="text-white ml-1 text-md w-full font-semibold">Country</label>
+              <label htmlFor="country" className="text-white ml-1 text-sm w-full font-semibold">Country</label>
               <input id="country" name="country" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex justify-evenly items-center">
@@ -139,14 +139,14 @@ function Form() {
         </div>
       </form>}
       {final && <form id="form3" className="flex flex-col justify-center items-center h-full w-full dark:bg-gray-900" onSubmit={handleSubmit}>
-          <div className="flex flex-col rounded-lg dark:border h-1/4 w-full lg:w-1/3 dark:bg-gray-800">
+          <div className="flex flex-col rounded-lg dark:border h-56 lg:h-72 w-5/6 md:w-4/6 xl:w-1/3 dark:bg-gray-800">
             <div className="flex flex-col justify-center items-center h-2/4 font-bold text-white">
               Choose your favourite language
               <div id="lang" className="flex justify-center items-center relative mt-4 dark:bg-purple-500 h-10 w-2/4 text-white rounded-lg">
               {lang}{dropDown ? <i className="fa-solid cursor-pointer ml-1 mt-1 p-3 fa-chevron-up text-white font-bold w-5" onClick={handleDropDown}></i> : <i className="fa-solid cursor-pointer ml-1 p-3 fa-chevron-down text-white font-bold w-5" onClick={handleDropDown}></i>}
-                {dropDown && <div className="grid grid-rows-5 h-64 w-full absolute mt-80 transition-all duration-500 ease-in"><div className="flex justify-center items-center bg-gray-600 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white rounded-t-lg" onClick={handleClick}>Rust</div>
-                <div className="flex justify-center items-center bg-gray-600 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>Golang</div><div className="flex justify-center items-center bg-gray-600 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>TypeScript</div><div className="flex justify-center items-center bg-gray-600 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>C++</div>
-                <div className="flex justify-center items-center bg-gray-600 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white rounded-b-lg" onClick={handleClick}>Python</div>
+                {dropDown && <div className="grid grid-rows-5 h-64 w-full absolute mt-80 transition-all duration-500 ease-in"><button className="flex justify-center items-center bg-gray-700 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white rounded-t-lg" onClick={handleClick}>Rust</button>
+                <button className="flex justify-center items-center bg-gray-700 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>Golang</button><button className="flex justify-center items-center bg-gray-700 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>TypeScript</button><button className="flex justify-center items-center bg-gray-700 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white" onClick={handleClick}>C++</button>
+                <button className="flex justify-center items-center bg-gray-700 cursor-pointer border border-black hover:bg-slate-800 transition-all duration-500 ease-in text-white rounded-b-lg" onClick={handleClick}>Python</button>
                 </div>}
               </div>
             </div>

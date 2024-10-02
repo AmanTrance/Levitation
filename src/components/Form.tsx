@@ -11,7 +11,6 @@ type Language = {
 function Form() {
   const navigate = useNavigate();
   const [initial, setInitial] = useState<boolean>(true);
-  const [middle, setMiddle] = useState<boolean>(false);
   const [final, setFinal] = useState<boolean>(false);
   const [dropDown, setDropDown] = useState<boolean>(false);
   const [lang, setLang] = useState<string>("Choose");
@@ -25,7 +24,7 @@ function Form() {
 
   const handleCancel = async (e :any) => {
     e.preventDefault();
-    if (middle === true || final === true) {
+    if (final === true) {
       const LangDetails: Language = {
         language: "...",
         userid: Number(window.sessionStorage.getItem("id")),
@@ -52,39 +51,17 @@ function Form() {
         "Content-Type": "application/json"
       }});
       setInitial(false);
-      setMiddle(true);
-      setHeight("h-1/3");
-    } else if (middle === true) {
-      e.preventDefault();
-      const file: HTMLInputElement = document.getElementById('file') as HTMLInputElement;
-      if (file.files !== null) {
-        if (file.files.length > 3) {
-          alert("Only max of 3 files allowed");
-          return;
-        } else {
-          for (let i of file.files) {
-            await axios.post("https://x8ki-letl-twmt.n7.xano.io/api:f9GQ_ICr/file", i, {headers:{
-              "Content-Type": "image"
-            }}); 
-          }
-        }
-      }
-      setMiddle(false);
       setFinal(true);
-      setHeight("h-2/3");
+      setHeight("h-3/6");
     } 
   }
 
   const handlePrevious = (e: any) => {
     e.preventDefault();
-    if (middle === true) {
-      setMiddle(false);
+    if (final === true) {
+      setFinal(false);
       setInitial(true);
       setHeight("h-0");
-    } else if (final === true) {
-      setFinal(false);
-      setMiddle(true);
-      setHeight("h-1/3");
     }
   }
 
@@ -170,19 +147,6 @@ function Form() {
             </div>
         </div>
       </form>}
-      {middle && <form id="form2" className="flex flex-col justify-center items-center h-full w-full dark:bg-gray-900" onSubmit={handleNext}>
-          <div className="flex flex-col rounded-lg dark:border h-1/4 w-full lg:w-1/3 dark:bg-gray-800">
-            <div className="flex flex-col w-full justify-center items-center p-4">
-              <label htmlFor="file" className="text-white text-lg ml-1 font-semibold">Files</label>
-              <input id="file" type="file" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white cursor-pointer md:w-60 w-full" multiple/>
-            </div>
-            <div className="flex justify-evenly items-center h-28">
-              <button className="dark:bg-red-500 w-1/4 h-2/4 rounded-md text-white font-bold hover:bg-red-600 transition-all duration-500 ease-in" onClick={handleCancel}>Cancel</button>
-              <button className="dark:bg-green-500 w-1/4 h-2/4 rounded-md text-white font-bold hover:bg-green-600 transition-all duration-500 ease-in" onClick={handlePrevious}>Previous</button>
-              <button type="submit" className="dark:bg-blue-500 w-1/4 h-2/4 rounded-md text-white font-bold hover:bg-blue-600 transition-all duration-500 ease-in">Next</button>
-            </div>
-          </div>
-        </form>}
       {final && <form id="form3" className="flex flex-col justify-center items-center h-full w-full dark:bg-gray-900" onSubmit={handleSubmit}>
           <div className="flex flex-col rounded-lg dark:border h-1/4 w-full lg:w-1/3 dark:bg-gray-800">
             <div className="flex flex-col justify-center items-center h-2/4 font-bold text-white">

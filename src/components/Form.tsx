@@ -102,7 +102,7 @@ function Form() {
             </div>
             <div className="flex flex-col justify-center p-2.5">
               <label htmlFor="email" className="text-white ml-1 text-sm w-full font-semibold">Email</label>
-              <input id="email" type="email" pattern="^[a-z.0-9]+@[a-z0-9]+.[a-z]{2,}$" name="email" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+              <input id="email" type="email" pattern="^[a-z\.0-9]+@[a-z0-9]+\[a-z]{2,}$" name="email" className="bg-gray-50 border h-5/6 border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
             </div>
             <div className="flex flex-col justify-center p-2.5">
               <label htmlFor="phone" className="text-white ml-1 text-sm w-full font-semibold">Phone</label>

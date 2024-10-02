@@ -94,7 +94,7 @@ function Form() {
   return (
     <div className="flex justify-center 2xl:items-center h-full w-full dark:bg-gray-900 overflow-y-scroll no-scrollbar">
       {initial && <form id="form1" className="flex flex-col justify-center items-center h-130 w-full dark:bg-gray-900" onSubmit={handleNext}>
-        <span className="text-white font-semibold text-xl mb-2 underline">Fill the form</span>
+        <span className="text-white font-semibold text-xl mb-2 underline font-mono">Fill the form</span>
         <div className="grid rounded-lg grid-rows-10 dark:border h-5/6 xl:w-1/3 md:w-1/2 w-5/6 dark:bg-gray-800">
             <div className="flex flex-col justify-center p-2.5">
               <label htmlFor="name" className="text-white ml-1 text-sm w-full font-semibold">Name</label>
